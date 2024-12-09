@@ -116,4 +116,18 @@ Deno.test("chooseEndpoint", async () => {
     }),
     "http://localhost:11434",
   );
+  assertEquals(
+    chooseEndpoint({
+      model: "llama3.2-vision:90b",
+      ...basseOption
+    }),
+    "http://localhost:11434",
+  );
+  assertEquals(
+    chooseEndpoint({
+      model: "qwq:32b",
+      ...basseOption
+    }),
+    "http://localhost:11434",
+  );
 });
